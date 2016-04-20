@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">CampusUQ</string>
     <string name="introduccion"> Campus UQ es una aplicacion diseñada para suplir algunas de las necesidases que se presentan en el campus de la universidad del quindio. Esta aplicacion esta pensada para el uso de estudiantes,docentes personal administrativo y otros</string>
+
+
+    <string name="action_settings">Settings</string>
+
+    <string name="Directorio">Directorio</string>
+    <string name="Noticias">Noticias</string>
+    <string name="Sugerencias">Sugerencias</string>
+    <string name="pagina">Pagina Web</string>
+    <string name="Idioma">Idioma</string>
+
 </resources>

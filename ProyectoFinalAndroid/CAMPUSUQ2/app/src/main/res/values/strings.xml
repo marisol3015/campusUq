@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">"CAMPUS UQ "</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="Directorio">Directorio</string>
+    <string name="Noticias">Noticias</string>
+    <string name="Sugerencias">Sugerencias</string>
+    <string name="Paginaweb">Pagina Web</string>
+    <string name="Idioma">Idioma</string>
+    
+    <string name="Usuario">Servicio al Cliente </string>
+    <string name="correo">android@uniquindio.edu.co</string>
+</resources>
