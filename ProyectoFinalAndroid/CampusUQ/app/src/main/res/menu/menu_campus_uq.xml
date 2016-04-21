@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_inicio"
+            android:checked="true"
+            android:icon="@drawable/ic_home"
+            android:title="@string/Inicio" />
+        <item
+            android:id="@+id/nav_directorio"
+            android:checked="true"
+            android:icon="@drawable/ic_contactos"
+            android:title="@string/Directorio" />
+        <item
+            android:id="@+id/nav_noticias"
+            android:icon="@drawable/ic_noticias"
+            android:title="@string/Noticias" />
+        <item
+            android:id="@+id/nav_sugerencias"
+            android:icon="@drawable/ic_sugerencias"
+            android:title="@string/Sugerencias" />
+        <item
+            android:id="@+id/nav_paginaweb"
+            android:icon="@drawable/ic_web"
+            android:title="@string/Paginaweb" />
+        <item
+            android:id="@+id/nav_idioma"
+            android:icon="@drawable/ic_idioma"
+            android:title="@string/Idioma" />
+    </group>
+
+</menu>
