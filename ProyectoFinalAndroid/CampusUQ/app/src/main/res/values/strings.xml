@@ -17,7 +17,8 @@
 
     <string name="Usuario">Servicio al Cliente </string>
     <string name="correo">android@uniquindio.edu.co</string>
-
+    <string name="buscar">Buscar...</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.uniquindio.electiva_android.campusuq.R;
+import com.uniquindio.electiva_android.campusuq.fragments.DirectorioFragment;
 import com.uniquindio.electiva_android.campusuq.fragments.VistaInicio;
 import com.uniquindio.electiva_android.campusuq.util.Utilidades;
 
@@ -110,6 +111,17 @@ public class CampusUQ extends AppCompatActivity {
         }
         if(title.equals("Sugerencias")) {
             Utilidades.mostrarDialogoSugerencia(getFragmentManager(), CampusUQ.class.getSimpleName());
+            drawerLayout.closeDrawers();
+        }
+
+        // fragment directorio
+        if(title.equals("Directorio"))
+        {
+            Fragment fragment = (Fragment) DirectorioFragment.instancia;
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+
+            fragmentManager.beginTransaction().replace(R.id.content_campus_uq, fragment).commit();
             drawerLayout.closeDrawers();
         }
     }
