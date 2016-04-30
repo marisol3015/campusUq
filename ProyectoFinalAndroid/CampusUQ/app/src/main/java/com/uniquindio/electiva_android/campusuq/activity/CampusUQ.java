@@ -9,11 +9,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.uniquindio.electiva_android.campusuq.R;
 import com.uniquindio.electiva_android.campusuq.fragments.VistaInicio;
+import com.uniquindio.electiva_android.campusuq.util.Utilidades;
 
 public class CampusUQ extends AppCompatActivity {
 
@@ -48,17 +48,10 @@ public class CampusUQ extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            getMenuInflater().inflate(R.menu.menu_campus_uq, menu);
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
+
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+       public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -98,21 +91,27 @@ public class CampusUQ extends AppCompatActivity {
     }
 
     private void selectItem(String title) {
-        // Enviar título como arguemento del fragmento
-        Bundle args = new Bundle();
-        args.putString(VistaInicio.NOMBRE_ACTION_BAR, title);
 
-        Fragment fragment =(Fragment) VistaInicio.instancia;
+        if(title.equals("Inicio")) {
+            // Enviar título como arguemento del fragmento
+            Bundle args = new Bundle();
+            args.putString(VistaInicio.NOMBRE_ACTION_BAR, title);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment fragment = (Fragment) VistaInicio.instancia;
 
-        fragmentManager.beginTransaction().replace(R.id.content_campus_uq, fragment).commit();
+            FragmentManager fragmentManager = getSupportFragmentManager();
 
-        //Cierra el menu desplegable
-        drawerLayout.closeDrawers(); // Cerrar drawer
+            fragmentManager.beginTransaction().replace(R.id.content_campus_uq, fragment).commit();
 
-        setTitle(title); // Setear título actual
+            //Cierra el menu desplegable
+            drawerLayout.closeDrawers(); // Cerrar drawer
 
+            setTitle(title); // Setear título actual
+        }
+        if(title.equals("Sugerencias")) {
+            Utilidades.mostrarDialogoSugerencia(getFragmentManager(), CampusUQ.class.getSimpleName());
+            drawerLayout.closeDrawers();
+        }
     }
 
 }

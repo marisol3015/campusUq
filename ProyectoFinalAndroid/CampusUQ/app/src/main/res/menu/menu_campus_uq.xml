@@ -19,6 +19,7 @@
             android:title="@string/Noticias" />
         <item
             android:id="@+id/nav_sugerencias"
+            android:checked="false"
             android:icon="@drawable/ic_sugerencias"
             android:title="@string/Sugerencias" />
         <item

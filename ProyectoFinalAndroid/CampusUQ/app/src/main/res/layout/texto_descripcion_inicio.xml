@@ -3,15 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="@color/fondoInicio">
+    android:fitsSystemWindows="true">
 
     <TextView
         android:id="@+id/descripcion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/introduccion"
-        android:textColor="@color/colorAccent"
+        android:textColor="#f1eeee"
         android:textStyle="bold"
         android:textAlignment="center"
         android:gravity="center"

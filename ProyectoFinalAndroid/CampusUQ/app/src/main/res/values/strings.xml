@@ -6,7 +6,6 @@
     <string name="desarroladores"> Desarrolladores \n \nJaime Ramirez Cortes \nMarisol Ocampo \nCarlos A. Ospina </string>
 
 
-
     <string name="action_settings">Settings</string>
 
     <string name="Inicio">Inicio</string>
@@ -18,4 +17,7 @@
 
     <string name="Usuario">Servicio al Cliente </string>
     <string name="correo">android@uniquindio.edu.co</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
