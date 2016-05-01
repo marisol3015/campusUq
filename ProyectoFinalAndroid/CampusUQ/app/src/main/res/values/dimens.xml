@@ -9,4 +9,8 @@
     <dimen name="header_height">192dp</dimen>
 
     <dimen name="perfil_image_size">64dp</dimen>
+
+    <dimen name="iconoVista_inicio">200dp</dimen>
+    <dimen name="margen_vista_inicio">30dp</dimen>
+
 </resources>

@@ -15,25 +15,60 @@ import com.uniquindio.electiva_android.campusuq.R;
 import com.uniquindio.electiva_android.campusuq.util.AdaptadorViewPager;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragmento que representa la vista de inicio de la aplicación.
+ * @author Jhon Jaime Ramirez
+ * @author Marisol Ocampo
+ * @author Carlos A. Ospina
+ * @author Universidad del Quindío
+ * @version 1.0
+ * @since 2016-04-16.
  */
 public class VistaInicio extends Fragment {
 
+    /**
+     * Atributo que permite visualizar un menú deslizable.
+     */
     private ViewPager viewPager;
+
+    /**
+     * Atributo nElementos de la clase VistaInicio.
+     */
     private int nElementos;
+
+    /**
+     * Atributo que permite visualizar la pagina en la que se encuenta
+     */
     private ImageView[]radios;
+
+    /**
+     * Atributo que representa el adaptador del menu deslizable.
+     */
     private AdaptadorViewPager adaptadorViewPager;
+
+    /**
+     * Atributo que representa el layout de la vista inicio.
+     */
     private LinearLayout barraIndicador;
 
+    /**
+     * Constante que representa el nombre del action bar.
+     */
     public static final String NOMBRE_ACTION_BAR = "nombre";
 
-    public static VistaInicio instancia = new VistaInicio();
-
+    /**
+     * Constructor de la clase VistaInicio.
+     */
     public VistaInicio() {
         // Required empty public constructor
     }
 
-
+    /**
+     * Este método se ejecuta cuando el fragment ya va a ser visible o dibujado.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,12 +87,15 @@ public class VistaInicio extends Fragment {
         init();
     }
 
+    /**
+     * Metodo que permite inicializar los componentes de la vista
+     */
     public void init() {
 
         viewPager = (ViewPager)getView().findViewById(R.id.viewPager);
         barraIndicador = (LinearLayout)getView().findViewById(R.id.barraIndicador);
 
-        int []idsDescripcion = {R.string.introduccion, R.string.dirigida, R.string.desarroladores, R.string.version};
+        int []idsDescripcion = {R.string.introduccion, R.string.dirigida, R.string.desarrolladores, R.string.version};
 
         adaptadorViewPager = new AdaptadorViewPager(getContext(), idsDescripcion);
         viewPager.setAdapter(adaptadorViewPager);
@@ -71,6 +109,9 @@ public class VistaInicio extends Fragment {
             @Override
             public void onPageSelected(int position) {
 
+                /**
+                 * Método que permite establecer el indicador en el que se encuentra el usuario.
+                 */
                 //Para reiniciar los botones
                 for (int i = 0; i < nElementos; i++) {
                     radios[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.radio_no_seleccionado));
@@ -85,6 +126,9 @@ public class VistaInicio extends Fragment {
         initBarraIndicadora();
     }
 
+    /**
+     * Método que permite inicializar la barra indicadora de la vista de inicio.
+     */
     public void initBarraIndicadora() {
 
         nElementos = adaptadorViewPager.getCount();

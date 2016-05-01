@@ -21,9 +21,14 @@ import com.uniquindio.electiva_android.campusuq.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 /**
- * Fragmento Directorio
+ * Fragmento que representa la vista del directorio de la aplicación.
+ * @author Jhon Jaime Ramirez
+ * @author Marisol Ocampo
+ * @author Carlos A. Ospina
+ * @author Universidad del Quindío
+ * @version 1.0
+ * @since 2016-04-16.
  */
 public class DirectorioFragment extends Fragment implements View.OnClickListener {
 
@@ -37,34 +42,31 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
      */
     ArrayAdapter<String> adaptador;
 
-
     /**
      * boton floating
      */
     private FloatingActionButton btnfloat;
-
 
     /**
      * Edittext donde ingresaremos nuestra búsqueda
      */
     EditText Busqueda;
 
-
-
     /**
      * ArrayList para el Listview
      */
     ArrayList<HashMap<String, String>> MenuDeComidas;
-
 
     /**
      * para inicializar el fragment
      */
     public static DirectorioFragment instancia = new DirectorioFragment();
 
+    /**
+     * Constructor de la clase DirectorioFragment.
+     */
     public DirectorioFragment() {
     }
-
 
     /**
      * El fragment a sido creado
@@ -72,12 +74,11 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
     }
 
     /**
-     * Inicializo listView, adaptador,
+     * Inicializo listView, adaptador.
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -120,29 +121,35 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
 
         });
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                if (parent.getItemAtPosition(position)!=null)
-                    mostrarMensaje(getContext(),parent.getItemAtPosition(position).toString());
-            }
-        });
-
-
-
         // Agregar los items
         adaptador = new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.depend,dependencias);
         lv.setAdapter(adaptador);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position) != null) {
+                    Toast.makeText(getContext(), parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         return rootView;
     }
 
+    /**
+     * Método que permite mostrar un mensaje a través de la clase Toast.
+     * @param context
+     * @param message
+     */
     public static void  mostrarMensaje(Context context,String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
-
+    /**
+     * Método que captura los eventos del fragmento.
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         if(v.getId()==btnfloat.getId())

@@ -1,13 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CampusUQ</string>
+
+    <string name="app_name" translatable="false">CampusUQ</string>
     <string name="introduccion"> ¿Qué es? \n \nCampus UQ es una aplicación diseñada para suplir algunas de las necesidades que se presentan en el campus de la Universidad del Quindío. \n</string>
     <string name="dirigida"> ¿A quién está dirigida? \n \nEsta aplicación está pensada para el uso de estudiantes, docentes, personal administrativo y otros.</string>
-    <string name="version"> Version 1.0 ©</string>
-    <string name="desarroladores"> Desarrolladores \n \nJaime Ramirez Cortes \nMarisol Ocampo \nCarlos A. Ospina </string>
+    <string name="version">Versión 1.0 ©</string>
+    <string name="desarrolladores"> Desarrolladores \n \nJaime Ramirez Cortes \nMarisol Ocampo \nCarlos A. Ospina </string>
 
-
-    <string name="action_settings">Settings</string>
-
+    <!-- nav view -->
     <string name="Inicio">Inicio</string>
     <string name="Directorio">Directorio</string>
     <string name="Noticias">Noticias</string>
@@ -16,9 +16,19 @@
     <string name="Idioma">Idioma</string>
 
     <string name="Usuario">Servicio al Cliente </string>
-    <string name="correo">android@uniquindio.edu.co</string>
+    <string name="correo" translatable="false">android@uniquindio.edu.co</string>
     <string name="buscar">Buscar...</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- idioma -->
+    <string name="espanol">Español</string>
+    <string name="ingles">Ingles</string>
+
+    <!-- Sugerencia -->
+    <string name="sugerencia">Llene los siguientes campos para enviar una sugerencia.</string>
+    <string name="calificacion">Calificacion:</string>
+    <string name="asunto">Asunto</string>
+    <string name="txtsugerencia">Sugerencia:</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="enviar">Enviar</string>
 
 </resources>

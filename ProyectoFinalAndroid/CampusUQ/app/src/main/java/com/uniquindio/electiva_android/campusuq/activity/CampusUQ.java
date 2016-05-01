@@ -1,5 +1,7 @@
 package com.uniquindio.electiva_android.campusuq.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,15 @@ import com.uniquindio.electiva_android.campusuq.fragments.DirectorioFragment;
 import com.uniquindio.electiva_android.campusuq.fragments.VistaInicio;
 import com.uniquindio.electiva_android.campusuq.util.Utilidades;
 
+/**
+ * Clase principal de la aplicación.
+ * @author Jhon Jaime Ramirez
+ * @author Marisol Ocampo
+ * @author Carlos A. Ospina
+ * @author Universidad del Quindío
+ * @version 1.0
+ * @since 2016-04-16.
+ */
 public class CampusUQ extends AppCompatActivity {
 
     /**
@@ -28,9 +39,16 @@ public class CampusUQ extends AppCompatActivity {
      */
     private String drawerTitle;
 
+    /**
+     * Permite ejecutar el layout, inicializar y cargar las diferentes
+     * configuraciones de la aplicacion.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Utilidades.obtenerLenguaje(this);
 
         setContentView(R.layout.activity_campus_uq);
         setToolbar(); // Setear Toolbar como action bar
@@ -49,10 +67,13 @@ public class CampusUQ extends AppCompatActivity {
         }
     }
 
-
-
+    /**
+     * Método que permite asignar una acción al menú de la aplicación.
+     * @param item Item seleccionado
+     * @return
+     */
     @Override
-       public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -61,6 +82,9 @@ public class CampusUQ extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Método que permite crear el actionBar de la aplicación.
+     */
     private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,7 +97,10 @@ public class CampusUQ extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Método que permite asignar un evento a cada item del menu desplegable (Navigation View).
+     * @param navigationView NavigationView al que se le asignara los eventos.
+     */
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -91,14 +118,19 @@ public class CampusUQ extends AppCompatActivity {
         );
     }
 
+    /**
+     * Metodo que permite visualizar los fragmentos o efectua las
+     * acciones elegidas por el usuario.
+     * @param title titulo del item seleccionado
+     */
     private void selectItem(String title) {
 
-        if(title.equals("Inicio")) {
+        if(title.equals(getResources().getString(R.string.Inicio))) {
             // Enviar título como arguemento del fragmento
             Bundle args = new Bundle();
             args.putString(VistaInicio.NOMBRE_ACTION_BAR, title);
 
-            Fragment fragment = (Fragment) VistaInicio.instancia;
+            Fragment fragment = new VistaInicio();
 
             FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -109,19 +141,31 @@ public class CampusUQ extends AppCompatActivity {
 
             setTitle(title); // Setear título actual
         }
-        if(title.equals("Sugerencias")) {
+        if(title.equals(getResources().getString(R.string.Sugerencias))) {
             Utilidades.mostrarDialogoSugerencia(getFragmentManager(), CampusUQ.class.getSimpleName());
             drawerLayout.closeDrawers();
         }
 
-        // fragment directorio
-        if(title.equals("Directorio"))
+        if(title.equals(getResources().getString(R.string.Directorio)))
         {
             Fragment fragment = (Fragment) DirectorioFragment.instancia;
 
             FragmentManager fragmentManager = getSupportFragmentManager();
 
             fragmentManager.beginTransaction().replace(R.id.content_campus_uq, fragment).commit();
+            drawerLayout.closeDrawers();
+
+            setTitle(title);
+        }
+
+        if(title.equals(getResources().getString(R.string.Idioma))) {
+            Utilidades.mostrarDialogoIdioma(getFragmentManager(), CampusUQ.class.getSimpleName(), this);
+            drawerLayout.closeDrawers();
+        }
+
+        if(title.equals(getResources().getString(R.string.Paginaweb))) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.uniquindio.edu.co/"));
+            startActivity(intent);
             drawerLayout.closeDrawers();
         }
     }
