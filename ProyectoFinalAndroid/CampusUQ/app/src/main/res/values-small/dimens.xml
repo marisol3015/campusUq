@@ -1,0 +1,26 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="header_left_padding">16dp</dimen>
+    <dimen name="header_height">192dp</dimen>
+
+    <dimen name="perfil_image_size">64dp</dimen>
+
+    <!-- Tamaños vista_inicio -->
+    <dimen name="iconoVista_inicio">140dp</dimen>
+    <dimen name="margen_vista_inicio_izq">30dp</dimen>
+    <dimen name="margen_vista_inicio_arriba">40dp</dimen>
+    <dimen name="margen_vista_inicio_der">20dp</dimen>
+    <dimen name="tamanio_txt_inicio">13dp</dimen>
+
+    <!-- Sugerencia -->
+    <dimen name="cabecera">15dp</dimen>
+    <dimen name="padding_cabecera">3dp</dimen>
+    <dimen name="padding_calificacion">3dp</dimen>
+    <dimen name="txts">15dp</dimen>
+
+</resources>

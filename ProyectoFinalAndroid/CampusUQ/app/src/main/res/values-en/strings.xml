@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Directorio">Directory</string>
+    <string name="Idioma">Language</string>
+    <string name="Inicio">Home</string>
+    <string name="Noticias">News</string>
+    <string name="Paginaweb">Website</string>
+    <string name="Sugerencias"> Suggestions</string>
+    <string name="Usuario">Customer service</string>
+    <string name="asunto">Matter</string>
+    <string name="buscar">Search...</string>
+    <string name="calificacion">Score:</string>
+    <string name="cancelar">Cancel</string>
+    <string name="desarrolladores">Developers \n \nJaime Ramirez Cortes \nMarisol Ocampo \nCarlos A. Ospina</string>
+    <string name="dirigida">Who is it for? \n \nThis application is intended for use by students, faculty, staff and others.</string>
+    <string name="enviar">Send</string>
+    <string name="espanol">Spanish</string>
+    <string name="ingles">English</string>
+    <string name="introduccion">What is it? \n \n Campus UQ is an application designed to meet some of the needs that arise on the campus of the University of Quindio. \n</string>
+    <string name="sugerencia">Fill in the following fields to send a suggestion.</string>
+    <string name="txtsugerencia">Suggestion:</string>
+    <string name="version">Version 1.0 ©</string>
+</resources>
