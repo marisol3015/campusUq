@@ -8,7 +8,7 @@
     <string name="Sugerencias"> Suggestions</string>
     <string name="Usuario">Customer service</string>
     <string name="asunto">Matter</string>
-    <string name="buscar">Search...</string>
+    <string name="buscar">Search dependens...</string>
     <string name="calificacion">Score:</string>
     <string name="cancelar">Cancel</string>
     <string name="desarrolladores">Developers \n \nJaime Ramirez Cortes \nMarisol Ocampo \nCarlos A. Ospina</string>
@@ -20,4 +20,13 @@
     <string name="sugerencia">Fill in the following fields to send a suggestion.</string>
     <string name="txtsugerencia">Suggestion:</string>
     <string name="version">Version 1.0 ©</string>
+    <string name="bienestar"> wellness 7777</string>
+    <string name="Enfermeria"> Nursing 6687</string>
+    <string name="ingenieriasistemas"> Systems engineer 2222</string>
+    <string name="ingenieriaelectronica"> Electronic Engineering 3333</string>
+    <string name="Medicina">Medicine 5556</string>
+    <string name="porteria">Goal 9999</string>
+    <string name="Rectoria">rectory 444</string>
+    <string name="actualizar">Update Directory </string>
+
 </resources>

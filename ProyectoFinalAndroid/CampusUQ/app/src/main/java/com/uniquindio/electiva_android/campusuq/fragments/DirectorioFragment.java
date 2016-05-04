@@ -18,9 +18,6 @@ import android.widget.Toast;
 
 import com.uniquindio.electiva_android.campusuq.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 /**
  * Fragmento que representa la vista del directorio de la aplicación.
  * @author Jhon Jaime Ramirez
@@ -40,7 +37,7 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
     /**
      * Adaptador para el list view
      */
-    ArrayAdapter<String> adaptador;
+   private ArrayAdapter<String> adaptador;
 
     /**
      * boton floating
@@ -50,12 +47,9 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
     /**
      * Edittext donde ingresaremos nuestra búsqueda
      */
-    EditText Busqueda;
+    private  EditText Busqueda;
 
-    /**
-     * ArrayList para el Listview
-     */
-    ArrayList<HashMap<String, String>> MenuDeComidas;
+
 
     /**
      * para inicializar el fragment
@@ -86,8 +80,8 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
         View rootView = inflater.inflate(R.layout.fragment_directorio, container,
                 false);
         // Datos para el ListView
-        String dependencias[] = {" Bienestar 7777", " Enfermeria 6687", "ingenieria de sistemas 2222", "ingenieria electronica 3333",
-                " Medicina 5556", "porteria 9999", "Rectoria 4444",
+        String dependencias[] = {getResources().getString(R.string.bienestar), getResources().getString(R.string.Enfermeria), getResources().getString(R.string.ingenieriasistemas), getResources().getString(R.string.ingenieriaelectronica),
+                getResources().getString(R.string.Medicina), getResources().getString(R.string.porteria),getResources().getString(R.string.Rectoria),
         };
 
         lv = (ListView) rootView.findViewById(R.id.list_view);
@@ -147,13 +141,13 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
     }
 
     /**
-     * Método que captura los eventos del fragmento.
+     * Método que captura el evento del directorio.
      * @param v
      */
     @Override
     public void onClick(View v) {
         if(v.getId()==btnfloat.getId())
-            mostrarMensaje(getContext(),"Actualizar Directorio");
+            mostrarMensaje(getContext(),getResources().getString(R.string.actualizar));
     }
 
 }

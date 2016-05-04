@@ -8,7 +8,7 @@
     <string name="Sugerencias">Sugerencias</string>
     <string name="Usuario">Servicio al Cliente</string>
     <string name="asunto">Asunto</string>
-    <string name="buscar">Buscar...</string>
+    <string name="buscar">buscar dependencia...</string>
     <string name="calificacion">Calificación:</string>
     <string name="cancelar">Cancelar</string>
     <string name="desarrolladores">Desarrolladores \n \nJaime Ramirez Cortes \nMarisol Ocampo \nCarlos A. Ospina</string>
@@ -20,4 +20,15 @@
     <string name="sugerencia">Llene los siguientes campos para enviar una sugerencia.</string>
     <string name="txtsugerencia">Sugerencia:</string>
     <string name="version">Versión 1.0 ©</string>
+    <string name="bienestar"> Bienestar 7777</string>
+    <string name="Enfermeria"> Enfermeria 6687</string>
+    <string name="ingenieriasistemas"> Ingenieria de sistemas 2222</string>
+    <string name="ingenieriaelectronica"> Ingenieria electronica 3333</string>
+    <string name="Medicina">Medicina 5556</string>
+    <string name="porteria">Porteria 9999</string>
+    <string name="Rectoria">Rectoria 444</string>
+    <string name="actualizar">Actualizar Directorio</string>
+
+
+
 </resources>

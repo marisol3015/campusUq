@@ -2,15 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="1">
 
 
     <!-- Productos del menú -->
-    <TextView android:id="@+id/depend"
-        android:layout_width="fill_parent"
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dip"
-        android:textSize="16dip"
-        android:textStyle="bold"/>
+        android:layout_gravity="center_horizontal"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.19">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/llamar"
+            android:layout_gravity="left|center_vertical" />
+
+        <TextView android:id="@+id/depend"
+            android:layout_width="233dp"
+            android:layout_height="wrap_content"
+            android:padding="12dip"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
 
 </LinearLayout>

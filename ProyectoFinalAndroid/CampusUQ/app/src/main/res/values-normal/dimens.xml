@@ -24,4 +24,6 @@
     <dimen name="padding_cabecera">24dp</dimen>
     <dimen name="padding_calificacion">24dp</dimen>
     <dimen name="txts">14dp</dimen>
+
+
 </resources>
