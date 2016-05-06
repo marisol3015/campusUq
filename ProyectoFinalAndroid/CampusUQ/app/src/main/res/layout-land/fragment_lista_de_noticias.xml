@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     tools:context="fragmets.ListaDeNoticiasFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,7 +9,7 @@
         android:id="@+id/recView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+
         android:padding="3dp"/>
 
 </FrameLayout>

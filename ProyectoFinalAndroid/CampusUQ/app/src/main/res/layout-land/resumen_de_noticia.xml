@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/resumen_noticia"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="200dp"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="10dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardPreventCornerOverlap="false" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <!-- Imagen a mostrar -->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:scaleType="centerCrop"
+            android:src="@drawable/encabezado1" />
+        <!-- Text view a mostrar en el relative layout titulo noticia-->
+
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/noticia1"
+            android:layout_gravity="bottom"
+            android:background="@color/toastColor"
+            android:textColor="#ffe3e3e3"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+
+    </FrameLayout>
+</android.support.v7.widget.CardView>
