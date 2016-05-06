@@ -12,11 +12,17 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.uniquindio.electiva_android.campusuq.R;
+import com.uniquindio.electiva_android.campusuq.fragments.DetalleDeNoticiasFragment;
 import com.uniquindio.electiva_android.campusuq.fragments.DirectorioFragment;
+import com.uniquindio.electiva_android.campusuq.fragments.ListaDeNoticiasFragment;
 import com.uniquindio.electiva_android.campusuq.fragments.VistaInicio;
 import com.uniquindio.electiva_android.campusuq.util.Utilidades;
+import com.uniquindio.electiva_android.campusuq.vo.noticia;
+
+import java.util.ArrayList;
 
 /**
  * Clase principal de la aplicación.
@@ -27,7 +33,7 @@ import com.uniquindio.electiva_android.campusuq.util.Utilidades;
  * @version 1.0
  * @since 2016-04-16.
  */
-public class CampusUQ extends AppCompatActivity {
+public class CampusUQ extends AppCompatActivity implements ListaDeNoticiasFragment.OnNoticiaSeleccionadaListener {
 
     /**
      * Instancia del drawer
@@ -38,6 +44,12 @@ public class CampusUQ extends AppCompatActivity {
      * Titulo inicial del drawer
      */
     private String drawerTitle;
+
+    /**
+     * Atributo de clase que rebresenta la lista de noticias.
+     */
+    private ArrayList<noticia> noticia;
+    private ArrayList<noticia> noticiaP;
 
     /**
      * Permite ejecutar el layout, inicializar y cargar las diferentes
@@ -167,6 +179,43 @@ public class CampusUQ extends AppCompatActivity {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.uniquindio.edu.co/"));
             startActivity(intent);
             drawerLayout.closeDrawers();
+        }
+
+        if(title.equals(getResources().getString(R.string.Noticias))) {
+
+            noticia = new ArrayList();
+            noticia.add(new noticia(R.drawable.encabezado1,getResources().getString(R.string.noticia1), getResources().getString(R.string.detalle1)));
+            noticia.add(new noticia(R.drawable.encabezado2,getResources().getString(R.string.noticia2), getResources().getString(R.string.detalle2)));
+            noticia.add(new noticia(R.drawable.encabezado3,getResources().getString(R.string.noticia3), getResources().getString(R.string.detalle3)));
+            noticia.add(new noticia(R.drawable.encabezado4,getResources().getString(R.string.noticia4), getResources().getString(R.string.detalle4)));
+            noticia.add(new noticia(R.drawable.encabezado5,getResources().getString(R.string.noticia5), getResources().getString(R.string.detalle5)));
+
+            //getSupportFragmentManager() para la gestion de fragmentos
+            ListaDeNoticiasFragment listaDeNoticiasFragment = new ListaDeNoticiasFragment();
+            listaDeNoticiasFragment.setNoticia(noticia);
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_campus_uq, listaDeNoticiasFragment).commit();
+            drawerLayout.closeDrawers();
+            setTitle(title);
+        }
+    }
+
+    @Override
+    public void onNoticiaSeleccionadaListener(int position) {
+
+        boolean esFragmento = getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_noticia) != null;
+        boolean compoenente = ((TextView) findViewById(R.id.titulo_de_detalle_noticia)) != null;
+        boolean imagenes= findViewById(R.id.image)!=null;
+
+        if (esFragmento && compoenente&&imagenes) {
+            ((DetalleDeNoticiasFragment) getSupportFragmentManager().findFragmentById(
+                    R.id.fragmento_detalle_noticia
+            )).mostrarNoticia(noticia.get(position));
+        } else {
+            Intent intent = new Intent(this, DetalleDeNoticiaActivity.class);
+            intent.putExtra("Noticia", noticia.get(position));
+
+            //Con este metodo se acciona la otra actividad en este caso DetalleDePeliculaActivity
+            startActivity(intent);
         }
     }
 
