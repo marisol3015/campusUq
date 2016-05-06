@@ -65,19 +65,6 @@ public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickL
      */
     public void mostrarNoticia(noticia noticia) {
         this.noticia = noticia;
-
-        imagen = (ImageView) getView().findViewById(R.id.imagen_detalle);
-        imagen.setImageResource(noticia.getIdImagen());
-        face= (ImageButton) getView().findViewById(R.id.BtnImagen);
-        imagen2= (ImageButton) getView().findViewById(R.id.BtnImagen2);
-        // face.setImageResource(noticia.getIdImagen());
-        titulo = (TextView)getView().findViewById(R.id.titulo_de_detalle_noticia);
-        titulo.setText(noticia.getTitulo());
-        detalle = (TextView)getView().findViewById(R.id.descripcion_de_detalle_noticia);
-        detalle.setText(noticia.getDetalle());
-
-    face.setOnClickListener(this);
-    imagen2.setOnClickListener(this);
     }
 
 
@@ -102,6 +89,23 @@ public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickL
         mostrarMensaje(getContext(),"Compartir Facebook");
     }
 
+    }
+
+
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        imagen = (ImageView) getView().findViewById(R.id.imagen_detalle);
+        imagen.setImageResource(noticia.getIdImagen());
+        face= (ImageButton) getView().findViewById(R.id.BtnImagen);
+        imagen2= (ImageButton) getView().findViewById(R.id.BtnImagen2);
+        // face.setImageResource(noticia.getIdImagen());
+        titulo = (TextView)getView().findViewById(R.id.titulo_de_detalle_noticia);
+        titulo.setText(noticia.getTitulo());
+        detalle = (TextView)getView().findViewById(R.id.descripcion_de_detalle_noticia);
+        detalle.setText(noticia.getDetalle());
     }
 
 }

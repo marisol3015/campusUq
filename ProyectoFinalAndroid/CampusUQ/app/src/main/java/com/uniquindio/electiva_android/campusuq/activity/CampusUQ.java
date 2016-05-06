@@ -12,7 +12,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.uniquindio.electiva_android.campusuq.R;
 import com.uniquindio.electiva_android.campusuq.fragments.DetalleDeNoticiasFragment;
@@ -193,7 +192,10 @@ public class CampusUQ extends AppCompatActivity implements ListaDeNoticiasFragme
             //getSupportFragmentManager() para la gestion de fragmentos
             ListaDeNoticiasFragment listaDeNoticiasFragment = new ListaDeNoticiasFragment();
             listaDeNoticiasFragment.setNoticia(noticia);
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_campus_uq, listaDeNoticiasFragment).commit();
+            android.support.v4.app.FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction();
+            transaccion.replace(R.id.content_campus_uq, listaDeNoticiasFragment);
+            transaccion.addToBackStack(null);
+            transaccion.commit();
             drawerLayout.closeDrawers();
             setTitle(title);
         }
@@ -202,21 +204,15 @@ public class CampusUQ extends AppCompatActivity implements ListaDeNoticiasFragme
     @Override
     public void onNoticiaSeleccionadaListener(int position) {
 
-        boolean esFragmento = getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_noticia) != null;
-        boolean compoenente = ((TextView) findViewById(R.id.titulo_de_detalle_noticia)) != null;
-        boolean imagenes= findViewById(R.id.image)!=null;
 
-        if (esFragmento && compoenente&&imagenes) {
-            ((DetalleDeNoticiasFragment) getSupportFragmentManager().findFragmentById(
-                    R.id.fragmento_detalle_noticia
-            )).mostrarNoticia(noticia.get(position));
-        } else {
-            Intent intent = new Intent(this, DetalleDeNoticiaActivity.class);
-            intent.putExtra("Noticia", noticia.get(position));
+        DetalleDeNoticiasFragment f = new DetalleDeNoticiasFragment();
 
-            //Con este metodo se acciona la otra actividad en este caso DetalleDePeliculaActivity
-            startActivity(intent);
-        }
+        android.support.v4.app.FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction();
+
+        transaccion.replace(R.id.content_campus_uq, f);
+        transaccion.addToBackStack(null);
+        f.mostrarNoticia(noticia.get(position));
+        transaccion.commit();
     }
 
 }
