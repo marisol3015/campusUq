@@ -82,11 +82,11 @@ public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickL
     @Override
     public void onClick(View v) {
         if(v.getId()==imagen2.getId())
-            mostrarMensaje(getContext(),"Compartir twitter");
+            mostrarMensaje(getContext(),getResources().getString(R.string.compartirtwitter));
 
     if(v.getId()==face.getId())
     {
-        mostrarMensaje(getContext(),"Compartir Facebook");
+        mostrarMensaje(getContext(),getResources().getString(R.string.compartirface));
     }
 
     }

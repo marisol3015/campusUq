@@ -29,13 +29,18 @@
     <string name="Rectoria">rectory 4444</string>
     <string name="actualizar">Update Directory </string>
     <string name="llamara">Calling</string>
+    <string name="compartirface">share news on facebook </string>
+    <string name="compartirtwitter">Share news twitter</string>
+
 
     <string name="noticia1">Uniquindianos can pursue Masters in INAOE , Mexico</string>
 
     <string name="volver">return</string>
     <string name="Toast">Remember puedde share this on facebook or twitter</string>
-
-
+    <string name="noticia3">Cervantes and Shakespeare or the celebration of a mystery</string>
+    <string name="noticia4">With participation and decision Quindio University faces the challenge of Accreditation</string>
+    <string name="noticia5">Biocentrism and Multitransdiciplinariedad in Binational Congress of Accounting and Sustainable Economy</string>
+    <string name="noticia2">uniquindianas voices graced the Internal Song Contest</string>
 
 
 </resources>
