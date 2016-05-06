@@ -1,6 +1,7 @@
 package com.uniquindio.electiva_android.campusuq.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,13 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.uniquindio.electiva_android.campusuq.R;
 import com.uniquindio.electiva_android.campusuq.vo.noticia;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DetalleDeNoticiasFragment extends Fragment {
+public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickListener {
 
     /**
      * Atributo titulo de la clase DetalleDeNoticiaFragment.
@@ -74,8 +76,32 @@ public class DetalleDeNoticiasFragment extends Fragment {
         detalle = (TextView)getView().findViewById(R.id.descripcion_de_detalle_noticia);
         detalle.setText(noticia.getDetalle());
 
-
+    face.setOnClickListener(this);
+    imagen2.setOnClickListener(this);
     }
 
+
+
+    /**
+     * Método que permite mostrar un mensaje a través de la clase Toast.
+     * @param context
+     * @param message
+     */
+    public static void  mostrarMensaje(Context context,String message) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==imagen2.getId())
+            mostrarMensaje(getContext(),"Compartir twitter");
+
+    if(v.getId()==face.getId())
+    {
+        mostrarMensaje(getContext(),"Compartir Facebook");
+    }
+
+    }
 
 }
