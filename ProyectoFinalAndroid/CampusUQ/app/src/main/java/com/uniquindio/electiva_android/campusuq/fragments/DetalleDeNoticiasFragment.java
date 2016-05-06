@@ -14,9 +14,7 @@ import android.widget.Toast;
 
 import com.uniquindio.electiva_android.campusuq.R;
 import com.uniquindio.electiva_android.campusuq.vo.noticia;
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickListener {
 
     /**
@@ -81,13 +79,13 @@ public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==imagen2.getId())
+        if(v.getId()==face.getId())
             mostrarMensaje(getContext(),getResources().getString(R.string.compartirtwitter));
 
-    if(v.getId()==face.getId())
-    {
-        mostrarMensaje(getContext(),getResources().getString(R.string.compartirface));
-    }
+        if(v.getId()==imagen2.getId())
+        {
+            mostrarMensaje(getContext(),getResources().getString(R.string.compartirface));
+        }
 
     }
 
@@ -100,8 +98,9 @@ public class DetalleDeNoticiasFragment extends Fragment implements View.OnClickL
         imagen = (ImageView) getView().findViewById(R.id.imagen_detalle);
         imagen.setImageResource(noticia.getIdImagen());
         face= (ImageButton) getView().findViewById(R.id.BtnImagen);
+        face.setOnClickListener(this);
         imagen2= (ImageButton) getView().findViewById(R.id.BtnImagen2);
-        // face.setImageResource(noticia.getIdImagen());
+        imagen2.setOnClickListener(this);
         titulo = (TextView)getView().findViewById(R.id.titulo_de_detalle_noticia);
         titulo.setText(noticia.getTitulo());
         detalle = (TextView)getView().findViewById(R.id.descripcion_de_detalle_noticia);
