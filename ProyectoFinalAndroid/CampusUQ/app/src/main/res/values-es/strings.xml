@@ -21,13 +21,14 @@
     <string name="txtsugerencia">Sugerencia:</string>
     <string name="version">Versión 1.0 ©</string>
     <string name="bienestar"> Bienestar 7777</string>
-    <string name="Enfermeria"> Enfermeria 6687</string>
-    <string name="ingenieriasistemas"> Ingenieria de sistemas 2222</string>
-    <string name="ingenieriaelectronica"> Ingenieria electronica 3333</string>
-    <string name="Medicina">Medicina 5556</string>
+    <string name="Enfermeria"> Enfermeria 371</string>
+    <string name="ingenieriasistemas"> Ingenieria de sistemas 356</string>
+    <string name="ingenieriaelectronica"> Ingenieria electronica  359</string>
+    <string name="Medicina">Medicina 372</string>
     <string name="porteria">Porteria 9999</string>
-    <string name="Rectoria">Rectoria 444</string>
-    <string name="actualizar">Actualizar Directorio</string>
+    <string name="Rectoria">Rectoria 4444</string>
+    <string name="llamara">LLamando a  </string>
+
 
 
 
