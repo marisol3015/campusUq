@@ -2,6 +2,8 @@ package com.uniquindio.electiva_android.campusuq.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -28,6 +30,8 @@ import com.uniquindio.electiva_android.campusuq.R;
  * @since 2016-04-16.
  */
 public class DirectorioFragment extends Fragment implements View.OnClickListener {
+
+
 
     /**
      * List view
@@ -84,6 +88,10 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
                 getResources().getString(R.string.Medicina), getResources().getString(R.string.porteria),getResources().getString(R.string.Rectoria),
         };
 
+
+
+
+
         lv = (ListView) rootView.findViewById(R.id.list_view);
         Busqueda = (EditText) rootView.findViewById(R.id.edttxt_buscar);
 
@@ -123,7 +131,13 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (parent.getItemAtPosition(position) != null) {
-                    Toast.makeText(getContext(), parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),getResources().getString(R.string.llamara)+" "+parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+                    // numeros telefonicos dependencias
+                    String [] numerosTelefonicos={"tel:+5767359301","tel:+5767359302","tel:+5767359303","tel:+5767359304","tel:+5767359305","tel:+5767359306","tel:+5767359307"};
+
+
+                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(numerosTelefonicos[position]));
+                    startActivity(intent);
                 }
             }
         });
@@ -148,6 +162,7 @@ public class DirectorioFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         if(v.getId()==btnfloat.getId())
             mostrarMensaje(getContext(),getResources().getString(R.string.actualizar));
+
     }
 
 }
