@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+    <!--fragmento de lista de noticias-->
+    <fragment
+        android:id="@+id/fragmento_lista_noticia"
+        class="fragmets.ListaDeNoticiasFragment"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="30" />
+    <!--fragmento de detalle de noticias-->
+    <fragment
+        android:id="@+id/fragmento_detalle_noticia"
+        class="fragmets.DetalleDeNoticiasFragment"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="70" />
+</LinearLayout>

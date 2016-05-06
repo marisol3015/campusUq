@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1e5bb7</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ac40ff</color>
+    <color name="colorEdit">#40b9ff</color>
+    <color name="colorLetras">#ff40f5</color>
+    <color name="colorLetrasB">#f7fafafa</color>
+    <color name="foreground_material_light">#65bcd4</color>
+    <color name="black">#62cce7</color>
+    <color name="toastColor">#9c24b12b</color>
+    <color name="primary_text_default_material_light">#de41e8f4</color>
+</resources>
