@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imagen_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="90dp"
+            android:src="@drawable/encabezado1"/>
+
+        <ImageButton
+            android:id="@+id/BtnImagen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorLetrasB"
+            android:src="@drawable/f" />
+        <ImageButton
+            android:id="@+id/BtnImagen2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/colorLetrasB"
+            android:src="@drawable/t" />
+
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo_de_detalle_noticia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="7dp"
+                android:textSize="19dp"
+                android:textAppearance="@string/noticia1"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descripcion_de_detalle_noticia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:maxLines="30"
+                android:text="@string/detalle1"
+                android:textSize="15dp" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
